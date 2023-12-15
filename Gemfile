@@ -40,6 +40,7 @@ gem "tty-spinner"
 gem 'faker'
 gem 'kaminari'
 gem 'kaminari-i18n', '~> 0.3.2'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
