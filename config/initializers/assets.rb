@@ -14,7 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 #app/assets
-Rails.application.config.assets.precompile += %w( admins_backoffice.css admins_backoffice.js users_backoffice.css users_backoffice.js admins_devise.css admins_devise.js)
+Rails.application.config.assets.precompile += %w( admins_backoffice.css admins_backoffice.js users_backoffice.css users_backoffice.js admins_devise.css admins_devise.js user_devise.css user_devise.js site.css site.js)
 
 # lib/assets
 Rails.application.config.assets.precompile += %w( sb-admin-2.css sb-admin-2.js)
