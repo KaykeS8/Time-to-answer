@@ -5,12 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'site' %>
   </head>
 
-  <body>
-    <h1>LAYOUT SITE</h1>
+  <body class="d-flex flex-column h-100">
     <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
