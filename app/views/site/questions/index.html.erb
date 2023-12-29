@@ -1,18 +1,1 @@
-<%= render 'shared/header'%>
-<div class="container px-5">
-  <h1 class="my-4">Perguntas abaixo </h1> 
-  <% @questions.each do |question|%>
-    <div class="mb-5 border rounded">
-      <div class="bg-dark p-3 mb-2 text-white-50">
-        <h2 class="lead"><%= question.description%></h2>
-      </div>
-      <div class="p-3">
-        <ul>
-          <% question.answers.each do |answer| %>
-            <li><%= answer.description%></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render partial: 'site/shared/question'%>
