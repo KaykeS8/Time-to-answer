@@ -5,4 +5,5 @@
 //= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap
 //= require jquery.easing/jquery.easing
+//= require bootstrap-notify/bootstrap-notify
 //= require sb-admin-2
