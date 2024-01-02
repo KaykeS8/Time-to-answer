@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
     get 'questions/index'
     get 'search', to: 'search#questions'
+    post 'answer', to: 'answer#question'
   end
 
   devise_for :admins
