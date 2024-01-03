@@ -1,28 +1,32 @@
 <%= render 'shared/header'%>
 <div class="container px-5">
-  <% if params[:term] %>
-    <h2 class="my-4">Resultado para o termo pesquisado: <%= params[:term]%></h2>
-    <% else %>
-    <h2 class="my-4">Ultimas Perguntas...</h2>
-  <% end %>
+  
+  <h2 class="my-4">
+    <%= msg_header %>
+  </h2>
+
   <% @questions.each do |question|%>
-    <%= form_with url: site_answer_path, local: true do |form|%>
+    <%= form_with url: site_answer_path do |form|%>
       <div class="mb-5 border rounded">
         <div class="bg-dark p-3 mb-2 text-white-50">
-          <h2 class="lead"><%= question.description%></h2>
+          <span class="badge bg-info mb-2">
+            <%= link_to question.subject.description, site_search_subject_path(question.subject_id, question.subject.description),class: 'text-dark', style: 'text-decoration:none;' %>
+          </span>
+          <p><%= question.description%></p>
         </div>
         <div class="p-3">
           <% question.answers.each do |answer| %>
               <div class="radio">
                 <label>
-                  <%= radio_button_tag 'answer', answer.id%>
+                  <%= radio_button_tag 'answer_id', answer.id%>
                   <%= answer.description%>
                 </label>
               </div>
             <% end %>
             <div class="my-2">
-              <%= form.submit 'responder', class: 'btn btn-sm btn-primary' %>
+              <%= form.submit 'responder', class: 'btn btn-sm btn-primary', id: "submit_#{question.id}"%>
             </div>
+            <div id="answer_<%= question.id%>"></div>
         </div>
       </div>
     <% end %>
