@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get 'questions/index'
     get 'search', to: 'search#questions'
     post 'answer', to: 'answer#question'
+    get 'subject/:subject_id/:subject', to: 'search#subject', as: 'search_subject'
   end
 
   devise_for :admins
