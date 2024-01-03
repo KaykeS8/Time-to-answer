@@ -8,6 +8,10 @@ class Question < ApplicationRecord
     includes(:answers).where("lower(description) LIKE ?", "%#{term.downcase}%").page(page)
   }
 
+  scope :search_subject, -> (page, subject_id) {
+    includes(:answers).where(subject_id: subject_id).page(page)
+}
+
   scope :last_questions, -> (page) {
     includes(:answers).order('created_at desc').page(page)
 }
