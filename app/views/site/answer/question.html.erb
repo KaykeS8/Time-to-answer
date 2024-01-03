@@ -1,2 +1,7 @@
 <%= render partial: 'shared/header' %>
-<h1>O ID da resposta foi: <%= params[:answer]%></h1>
+<h1>O ID da resposta foi: <%= params[:answer_id]%></h1>
+<% if @answer.correct%>
+  <p>Correta</p>
+<% else %>
+  <p>Falsa</p>
+<% end %>
