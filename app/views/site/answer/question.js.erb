@@ -1,0 +1,11 @@
+var divAnswer = document.querySelector('#answer_<%= @answer.question_id%>')
+var btnSubmit = document.querySelector('#submit_<%= @answer.question_id%>')
+
+
+btnSubmit.removeAttribute('data-disable-with')
+if(<%= @answer.correct%>) {
+  btnSubmit.disabled = true
+  divAnswer.innerHTML = '<p style="color: green;">Parabêns você acertou :)</p>'
+} else {
+  divAnswer.innerHTML = '<p style="color: red;">Sua resposta está errada :(</p>'
+}
