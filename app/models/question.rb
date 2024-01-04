@@ -9,7 +9,7 @@ class Question < ApplicationRecord
   }
 
   scope :search_subject, -> (page, subject_id) {
-    includes(:answers).where(subject_id: subject_id).page(page)
+    includes(:answers, :subject).where(subject_id: subject_id).page(page)
 }
 
   scope :last_questions, -> (page) {
