@@ -53,5 +53,14 @@
     <% end %>
   <% end %>
 
+
+  <% unless resource.errors.empty? %>
+  <% resource.errors.full_messages.each do |msg|%>
+      <script>
+        $.notify('<%= msg%>',{ type: 'danger'})
+      </script>
+    <% end %>
+  <% end %>
+
   </body>
 </html>
