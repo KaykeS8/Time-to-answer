@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get 'subject/:subject_id/:subject', to: 'search#subject', as: 'search_subject'
   end
 
-  devise_for :admins
+  devise_for :admins, skip: [:registration]
   devise_for :users
   root 'site/welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
