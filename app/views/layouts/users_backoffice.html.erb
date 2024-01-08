@@ -31,21 +31,22 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <%= link_to users_backoffice_welcome_index_path,class: "sidebar-brand d-flex align-items-center justify-content-center" do%>
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">SB User <sup>2</sup></div>
-            </a>
+            <% end %>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <%= link_to users_backoffice_profile_path, class: 'nav-link' do%>
                     <i class="fas fa-fw fa-user"></i>
                     <span>Dados do perfil</span></a>
+                <% end %>
             </li>
 
             <!-- Divider -->
@@ -259,11 +260,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Page User</h1>
                     <%= yield%>
-                    <%= link_to 'sair', root_path, class: 'btn btn-secondary'%>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -319,6 +316,5 @@
             $.notify('<%= notice%>',{ type: 'success'})
         </script>
     <% end %>
-
 </body>
 </html>
