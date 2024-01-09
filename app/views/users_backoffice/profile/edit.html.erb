@@ -34,8 +34,17 @@
     </div>
 
     <div class="mb-3">
-      <%= profile_form.label :gender, class: 'form-label'%>
-      <%= profile_form.text_field :gender, class: 'form-control'%>
+        <%= profile_form.label :gender, class: 'form-check-label', style: 'display: block;'%>
+        <div class="d-flex">
+          <div class="form-check mr-2">
+            <%= profile_form.radio_button :gender, 'masculino', class: 'form-check-input'%>
+            <%=profile_form.label :gender, 'masculino', class: 'form-check-label'%>
+          </div>
+          <div class="form-check">
+            <%= profile_form.radio_button :gender, 'feminino', class: 'form-check-input'%>
+            <%=profile_form.label :gender, 'feminino', class: 'form-checklabel'%>
+          </div>
+        </div>
     </div>
 
     <div class="mb-3">
