@@ -11,29 +11,46 @@
   </div>
 <% end %>
 
-<%= form_with(url: users_backoffice_profile_path,local: true, model: @user) do |f| %>
+<%= form_with(url: users_backoffice_profile_path,local: true, model: @user) do |form| %>
   <div class="row">
     <div class="mb-3 col">
-      <%= f.label :first_name, class: 'form-label'%>
-      <%= f.text_field :first_name, class: 'form-control'%>
+      <%= form.label :first_name, class: 'form-label'%>
+      <%= form.text_field :first_name, class: 'form-control'%>
     </div>
     <div class="mb-3 col">
-      <%= f.label :last_name, class: 'form-label'%>
-      <%= f.text_field :last_name, class: 'form-control'%>
+      <%= form.label :last_name, class: 'form-label'%>
+      <%= form.text_field :last_name, class: 'form-control'%>
     </div>
   </div>
   <div class="mb-3">
-    <%= f.label :email, class: 'form-label'%>
-    <%= f.text_field :email, class: 'form-control'%>
+    <%= form.label :email, class: 'form-label'%>
+    <%= form.text_field :email, class: 'form-control'%>
+  </div>
+
+  <%= form.fields_for :user_profile do |profile_form|%>
+    <div class="mb-3">
+      <%= profile_form.label :address, class: 'form-label'%>
+      <%= profile_form.text_field :address, class: 'form-control'%>
+    </div>
+
+    <div class="mb-3">
+      <%= profile_form.label :gender, class: 'form-label'%>
+      <%= profile_form.text_field :gender, class: 'form-control'%>
+    </div>
+
+    <div class="mb-3">
+      <%= profile_form.label :birthdate, class: 'form-label'%>
+      <%= profile_form.text_field :birthdate, class: 'form-control'%>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :password, class: 'form-label'%>
+    <%= form.password_field :password ,class: 'form-control'%>
   </div>
   <div class="mb-3">
-    <%= f.label :password, class: 'form-label'%>
-    <%= f.password_field :password ,class: 'form-control'%>
+    <%= form.label :password_confirmation ,class: 'form-label'%>
+    <%= form.password_field :password_confirmation, class: 'form-control'%>
   </div>
-  <div class="mb-3">
-    <%= f.label :password_confirmation ,class: 'form-label'%>
-    <%= f.password_field :password_confirmation, class: 'form-control'%>
-  </div>
-  <%= f.submit 'Enviar', class: 'btn btn-primary'%>
+  <%= form.submit 'Enviar', class: 'btn btn-primary'%>
 <% end %>
 </div>
