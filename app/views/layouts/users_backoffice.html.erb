@@ -41,7 +41,14 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <div>
+                    <p class="nav-link mb-0"><%= current_user.full_name %></p>
+                </div>
+            </li>
+
+            <hr class="sidebar-divider my-0">
+
             <li class="nav-item">
                 <%= link_to users_backoffice_profile_path, class: 'nav-link' do%>
                     <i class="fas fa-fw fa-user"></i>
