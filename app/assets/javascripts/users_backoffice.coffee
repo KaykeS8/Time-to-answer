@@ -7,3 +7,5 @@
 //= require jquery.easing/jquery.easing
 //= require bootstrap-notify/bootstrap-notify
 //= require sb-admin-2
+//= require jquery-ui/ui/widgets/datepicker
+//= require jquery-ui/ui/i18n/datepicker-pt-BR
