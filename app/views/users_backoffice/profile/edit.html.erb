@@ -49,7 +49,7 @@
 
     <div class="mb-3">
       <%= profile_form.label :birthdate, class: 'form-label'%>
-      <%= profile_form.text_field :birthdate, class: 'form-control'%>
+      <%= profile_form.date_field :birthdate,value: I18n.l(@user.user_profile.birthdate), class: 'form-control date-picker'%>
     </div>
   <% end %>
   <div class="mb-3">
