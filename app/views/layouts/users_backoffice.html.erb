@@ -42,9 +42,15 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
+                <% unless current_user.full_name.blank? %>
                 <div>
                     <p class="nav-link mb-0"><%= current_user.full_name %></p>
                 </div>
+                <% else %>
+                <div>
+                    <p class="nav-link mb-0">Seu nome aqui</p>
+                </div>
+                <% end %>
             </li>
 
             <hr class="sidebar-divider my-0">
@@ -323,5 +329,11 @@
             $.notify('<%= notice%>',{ type: 'success'})
         </script>
     <% end %>
+
+    <script>
+        function dataInput() {
+            $('.date-picker').datepicker();
+        } dataInput()
+    </script>
 </body>
 </html>
