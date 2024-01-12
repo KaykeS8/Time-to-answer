@@ -41,10 +41,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <li class="nav-item">
+            <li class="nav-item p-2">
                 <% unless current_user.full_name.blank? %>
-                <div>
-                    <p class="nav-link mb-0"><%= current_user.full_name %></p>
+                <div class="d-flex">
+                    <%= link_to '#', "data-toggle":"modal", "data-target": "#profileModal" do %>
+                        <%= image_tag("https://avatars.githubusercontent.com/u/89744379?v=4", class: 'img-circle', style: 'width: 50px; height: 50px;')%>
+                    <% end %>
+                    <div>
+                        <p class="nav-link mb-0"><%= current_user.full_name %></p>
+                    </div>
                 </div>
                 <% else %>
                 <div>
@@ -316,6 +321,26 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <%= link_to 'sair', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /modal profile -->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Colque sua imagem</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Content here</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <%= link_to 'Atualizar', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
                 </div>
             </div>
         </div>
