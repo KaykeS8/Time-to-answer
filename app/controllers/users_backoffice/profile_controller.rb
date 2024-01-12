@@ -9,6 +9,9 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
   def update
     if @user.update(user_params)
       bypass_sign_in @user
+      if user_params[:user_profile_attributes][:avatar]
+        return redirect_to users_backoffice_welcome_index_path, notice: 'Atualizado com successo'
+      end
       redirect_to users_backoffice_profile_path, notice: 'Atualizado com successo'
     else
       render :edit, status: :unprocessable_entity
@@ -22,7 +25,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
   end
 
   def user_params
-   params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation, user_profile_attributes: [:id, :address, :gender, :birthdate])
+   params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation, user_profile_attributes: [:id, :address, :gender, :birthdate, :avatar])
   end
  
   def verify_password
