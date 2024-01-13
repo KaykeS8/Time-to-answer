@@ -61,6 +61,15 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item">
+                <%= link_to users_backoffice_welcome_index_path, class: 'nav-link' do%>
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Início</span></a>
+                <% end %>
+            </li>
+
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
                 <%= link_to users_backoffice_profile_path, class: 'nav-link' do%>
                     <i class="fas fa-fw fa-user"></i>
                     <span>Dados do perfil</span></a>
@@ -264,6 +273,10 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
+                                <%= link_to(site_welcome_index_path, class: 'dropdown-item') do  %>
+                                    <i class="fas fa-fw fa-home fa-sm mr-2 text-gray-400"></i>
+                                    Home
+                                <% end %>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Sair
