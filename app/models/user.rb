@@ -6,10 +6,19 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  # callback
+  after_create :set_statistic
 
   validates :first_name, presence: true, length: {minimum: 3}, on: :update
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  private
+
+  def set_statistic
+    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
   end
 end
