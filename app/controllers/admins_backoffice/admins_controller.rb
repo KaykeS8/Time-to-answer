@@ -19,7 +19,10 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def edit;end
 
   def update
-    return redirect_to admins_backoffice_admins_path, notice: 'Atualizado com succeso' if @admin.update(params_admin)
+    if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
+      return redirect_to admins_backoffice_admins_path, notice: 'Atualizado com sucesso'
+    end
     render :edit, status: :unprocessable_entity
   end
   
