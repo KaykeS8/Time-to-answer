@@ -10,6 +10,10 @@ class CEP
     fill_in_data(@cep)
   end
 
+  def endereco
+    "#{@logradouro} / #{@bairro} / #{@localidade} - #{@uf}"
+  end
+
   private
 
   def fetch_cep(cep, url)
@@ -25,5 +29,3 @@ class CEP
     @uf = cep["uf"]
   end
 end
-
-CEP.new(32241395)
