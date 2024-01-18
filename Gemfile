@@ -66,3 +66,5 @@ gem "devise", "~> 4.9"
 
 gem "prawn", "~> 2.4"
 gem "prawn-rails"
+gem "redis"
+gem 'hiredis'
