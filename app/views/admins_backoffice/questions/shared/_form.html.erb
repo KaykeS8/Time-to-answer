@@ -12,7 +12,8 @@
 <%= form_with(model: [:admins_backoffice, @question], local:true) do |form|%>
   <div class="mb-3 form-group">
     <%= form.label :description, class: 'form-label'%>
-    <%= form.text_area :description, class: 'form-control', rows: 5%>
+    <%= form.hidden_field :description%>
+    <trix-editor input="question_description"></trix-editor>
   </div>
 
   <div class="mb-3 form-group">
