@@ -68,3 +68,4 @@ gem "prawn", "~> 2.4"
 gem "prawn-rails"
 gem "redis"
 gem 'hiredis'
+gem 'trix-rails', require: 'trix'
