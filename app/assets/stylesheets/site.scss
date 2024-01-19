@@ -6,3 +6,7 @@
   *= require styles
   *= require @fortawesome/fontawesome-free/css/all
 */ 
+
+h3.panel-title div {
+  display: inline;
+}
